@@ -1,0 +1,20 @@
+include head.pug
+
+<div id="content">
+    <section>
+        <h3>Lista książek: </h3>
+        - var data = locals.db_results;
+        table(class="table table-striped")
+            thead(class="thead-light")
+                tr
+                    each value, key in data[0]
+                        th #{key}
+            tbody
+                each survey in data
+                    tr
+                        each value, field in survey
+                            td #{value}
+    </section>
+</div>
+
+include footer.pug

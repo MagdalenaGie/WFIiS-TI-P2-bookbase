@@ -1,0 +1,21 @@
+{
+  "name": "ti-proj-2-offline",
+  "version": "1.0.0",
+  "main": "local_storage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "jquery": "^3.5.1",
+    "mongodb": "^3.6.3",
+    "pug": "^3.0.0"
+  }
+}

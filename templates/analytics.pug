@@ -1,0 +1,17 @@
+include head.pug
+
+<div id="content">
+	<section>
+		<h3>Histogram</h3>
+		<button type="button" id="makeChart">Rysuj</button>
+		<div class="wrapper">
+			<p>Ile książek masz zapisane w każdej kategorii?</p>
+			<canvas id="booktypechart" width="800" height="400"></canvas>
+
+			<p>Jaki jest stosunek książek przeczytanych do nieprzeczytanych?</p>
+			<canvas id="donechart" width="800" height="400"></canvas>
+		</div>
+	</section>
+</div>
+
+include footer.pug

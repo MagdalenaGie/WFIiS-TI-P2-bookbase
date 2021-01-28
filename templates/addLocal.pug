@@ -1,0 +1,29 @@
+include head.pug
+
+<div id="content">
+	<section>
+		<h3>Zapisz książkę na liście do dodania później:</h3>
+		<form id="savetolocal" onsubmit="saveToLocal(event)">
+			<p>Tytuł: </p><input type="text" name="ltitle" id="ltitle" placeholder="Tytuł" required><br>
+			<p>Autor: </p><input type="text" name="lauthor" id="lauthor" placeholder="Autor" required><br>
+			<p>Kategoria: </p>
+			<select name="lcategory" id="lcategory" required>
+				<option value="" disabled>Katerogia</option>
+				<option value="fantastyka">fantastyka</option>
+				<option value="historyczna">historyczna</option>
+				<option value="romans">romans</option>
+				<option value="naukowa">naukowa</option>
+			</select><br>
+			<p>Przeczytana: </p>
+			<select name="ldone" id="ldone" required>
+				<option value="" disabled>czy ją przeczytałeś?</option>
+				<option value="tak">tak</option>
+				<option value="nie">nie</option>
+			</select><br>
+			<input type="submit" value="Zapisz">
+		</form>
+	</section>
+</div>
+<script src="localStorage.js"></script>
+
+include footer.pug

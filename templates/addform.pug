@@ -1,0 +1,33 @@
+include head.pug
+
+<div id="content">
+	<section>
+		<h3>Dodaj książkę do bazy:</h3>
+		<form id="add_book" >
+			<p>Tytuł: </p><input type="text" name="title" id="title"placeholder="Tytuł" required><br>
+			<p>Autor: </p><input type="text" name="author" id="author" placeholder="Autor" required><br>
+			<p>Kategoria: </p>
+			<select name="category" id="category" required>
+				<option value="" disabled>Katerogia</option>
+				<option value="fantastyka">fantastyka</option>
+				<option value="historyczna">historyczna</option>
+				<option value="romans">romans</option>
+				<option value="naukowa">naukowa</option>
+			</select><br>
+			<p>Przeczytana: </p>
+			<select name="done" id="done" required>
+				<option value="" disabled>czy ją przeczytałeś?</option>
+				<option value="tak">tak</option>
+				<option value="nie">nie</option>
+			</select><br/>
+			<input type="submit" value="Zapisz">
+		</form>
+	</section><br/>
+	<h3>Dodaj do bazy książki ze swojej listy lokalnej:</h3>
+	<section>
+		<button id="pushtodb">Dodaj książki zapisane lokalnie</button>
+	</section>
+</div>
+<script src="localStorage.js"></script>
+
+include footer.pug

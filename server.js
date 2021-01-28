@@ -5,8 +5,8 @@ const session = require('express-session');
 const pug = require('pug');
 
 const dbname = 'bookshelf'
-const login = 'admin'
-const pass = 'adminpass'
+const login = ''
+const pass = ''
 const url = 'mongodb+srv://'+login+':'+pass+'@cluster0.smxu5.mongodb.net/'+dbname+'?retryWrites=true&w=majority'
 
 var mongobase;

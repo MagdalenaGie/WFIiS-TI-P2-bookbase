@@ -1,6 +1,6 @@
 include head.pug
 
-<div id="content">
+<div id="content" class="content">
 	<section>
 		<h3>Zaloguj się</h3>
 		<form action="" id="register_form" method="POST">
@@ -9,14 +9,13 @@ include head.pug
 <input type="text" id="loginreg" name="loginreg" placeholder="login" required>
 </div>
 <div class="row">
-<label for="pass">Hasło:</label>
-<input type="password" id="pass1" name="pass1" placeholder="haslo" required>
+<label for="pass1">Hasło:</label>
+<input type="password" id="pass1" name="pass1" placeholder="hasło" required>
 </div>
 <div class="row">
-<label for="pass">Powtórz hasło:</label>
-<input type="password" id="pass2" name="pass2" placeholder="haslo" required>
+<input type="password" id="pass2" name="pass2" placeholder="powtórz hasło" required>
 </div>
-<input type="submit" value="Zaloguj">
+<input type="submit" value="Zaloguj" class="btn">
 </form>
 </section>
 </div>

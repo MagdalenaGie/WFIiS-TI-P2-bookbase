@@ -146,16 +146,16 @@ $(document).ready(function() {
                     label: 'Ilość zapisanych książek z danej kategorii',
                     data: data01,
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(204, 0, 0, 0.5)',
+                        'rgba(102, 0, 204, 0.5)',
+                        'rgba(0, 0, 204, 0.5)',
+                        'rgba(204, 0, 102, 0.5)',
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
+                        'rgba(204, 0, 0, 1)',
+                        'rgba(102, 0, 204, 1)',
+                        'rgba(0, 0, 204, 1)',
+                        'rgba(204, 0, 102, 1)',
                     ],
                     borderWidth: 1
                 }]
@@ -191,25 +191,18 @@ $(document).ready(function() {
                     label: 'Porównanie ilosci przeczytanych i nieprzeczytanych książek z twojej bazy',
                     data: data02,
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)'
+                        'rgba(204, 0, 0, 0.5)',
+                        'rgba(102, 0, 204, 0.5)',
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)'
+                        'rgba(204, 0, 0, 1)',
+                        'rgba(102, 0, 204, 1)',
                     ],
                     borderWidth: 1
                 }]
             },
             options: {
-                responsive: false,
-                // scales: {
-                //     yAxes: [{
-                //         ticks: {
-                //             beginAtZero: true
-                //         }
-                //     }]
-                // }
+                responsive: false
             }
         });
     }

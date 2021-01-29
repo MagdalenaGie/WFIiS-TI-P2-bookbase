@@ -1,6 +1,6 @@
 include head.pug
 
-<div id="content">
+<div id="content" class="content">
 	<section>
 		<h3>Dodaj książkę do bazy:</h3>
 		<form id="add_book" >
@@ -19,13 +19,13 @@ include head.pug
 				<option value="" disabled>czy ją przeczytałeś?</option>
 				<option value="tak">tak</option>
 				<option value="nie">nie</option>
-			</select><br/>
-			<input type="submit" value="Zapisz">
+			</select><br><br>
+			<input type="submit" value="Zapisz" class="btn">
 		</form>
 	</section><br/>
 	<h3>Dodaj do bazy książki ze swojej listy lokalnej:</h3>
 	<section>
-		<button id="pushtodb">Dodaj książki zapisane lokalnie</button>
+		<button id="pushtodb" class="btn">Dodaj książki zapisane lokalnie</button>
 	</section>
 </div>
 <script src="localStorage.js"></script>

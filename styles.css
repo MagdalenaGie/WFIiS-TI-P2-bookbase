@@ -1,45 +1,48 @@
 body {
-    background-color: #e3fdfd;
+    background-image: url(./assets/background2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
     margin: 0;
     min-height: 100vh;
     font-family: 'Roboto', Helvetica, sans-serif;
-    color: #444;
 }
 
-header {
-    background-color: #71c9ce;
-    color: #fefefe;
-}
-header > h1 {
-    padding-top: 8px;
+nav{
+    background-color: #fff;
     margin: 0;
-    text-align: center;
+    padding: 20px;
 }
-
 
 .header-link {
     display: inline-block;
     text-decoration: none;
     padding: 8px 16px;
-    color: #fefefe;
+    color: #f84f4f;
+    background-color: #fff;
 }
 
 .header-link:hover {
-    background-color: #a6e3e9;
+    color: white;
+    background-color: #f84f4f;
     text-decoration: none;
-    color: #fff;
+    font-weight: bold;
 }
 
-#loginpage, #logout, #current_user {
+#loginpage, #logout, #register, #current_user {
     float: right;
 }
 
 #content {
-    margin:3em;
-    margin-bottom: 5em;
-    padding:1em;
-    border-radius: 0.5em;
-    background-color: #fefefe;
+    margin: 50px 130px;
+    padding: 40px;
+    border: 1px solid #e41818;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #ffffffab;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 1rem 0 rgba(255, 70, 70, 0.2);
+    color: rgb(0, 0, 0);
 }
 
 section {
@@ -50,22 +53,62 @@ section {
 .row {
     display: block;
     margin-bottom: 1em;
-    width: 300px;
+    text-align: right;
+    margin-right: 41%;
+}
+
+p{
+    margin:5px;
 }
 
 input {
-    padding: 4px 8px;
-    border-radius: 8px;
-    border: solid 1px #ddd;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: solid 1px #e41818;
 }
 
-
+select {
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: solid 1px #e41818;
+}
 
 .btn {
-    background-color: #3282b8;
+    background-color: #e41818;
+    border-color: black;
+    border-width: 2px;
+    border-style: outset;
     color: #fff;
     text-decoration: none;
-    padding: 4px 8px;
-    border-radius:1px;
-    line-height:1.5em;
+    padding: 8px 16px;
+    border-radius:5px;
 }
+
+.wrapper{
+    margin-top: 4%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    margin: auto;
+    width: 90%
+  }
+  
+.table td, .table th {
+    border: 1px solid rgba(255, 0, 0, 0.301);
+    padding: 8px;
+  }
+  
+.table tr:nth-child(even){background-color: #ffc1c133;}
+  
+.table tr:hover {background-color: #fc5a5a73;}
+  
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #e41818;
+    color: white;
+  }

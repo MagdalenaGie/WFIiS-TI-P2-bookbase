@@ -1,9 +1,9 @@
 include head.pug
 
-<div id="content">
+<div id="content" class="content">
     <section>
         <h3>Lista książek: </h3>
-        - var data = locals.db_results;
+        - var data = locals.toDisplay;
         table(class="table table-striped")
             thead(class="thead-light")
                 tr

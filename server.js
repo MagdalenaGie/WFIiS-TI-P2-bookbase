@@ -3,10 +3,11 @@ const bodyParser = require('body-parser');
 const mongodb = require('mongodb');
 const session = require('express-session');
 const pug = require('pug');
+const { Session } = require('express-session');
 
 const dbname = 'bookshelf'
-const login = 'admin'
-const pass = 'adminpass'
+const login = ''
+const pass = ''
 const url = 'mongodb+srv://'+login+':'+pass+'@cluster0.smxu5.mongodb.net/'+dbname+'?retryWrites=true&w=majority'
 
 var mongobase;
@@ -32,6 +33,10 @@ app.use(session({
  app.get('/styles.css', function(req,res) {
     res.sendFile(__dirname + '/styles.css');
  })
+
+ app.get('/assets/background2.jpg', function(req,res) {
+   res.sendFile(__dirname + '/assets/background2.jpg');
+})
  
  app.get('/ajax.js', function(req,res) {
     res.sendFile(__dirname + '/ajax.js');
@@ -107,7 +112,16 @@ app.get('/getallbooks', function(req, res) {
       var cursor = mongobase.collection('books').find().toArray(function(err, db_results) {
          if (err) return console.log(err);
          console.log(db_results);
-         result = pug.renderFile('templates/allbooks.pug', {db_results});
+         toDisplay = []
+         for(let book of db_results){
+            let el = {
+               tytuł: book.title,
+               autor: book.author,
+               przeczytana: book.done
+            }
+            toDisplay.push(el)
+         }
+         result = pug.renderFile('templates/allbooks.pug', {toDisplay});
          res.status(200).send(result);
       })
    } else {
@@ -122,7 +136,17 @@ app.get('/getmybooks', function(req, res) {
      var cursor = mongobase.collection('books').find({user: req.session.userId}).toArray(function(err, db_results) {
         if (err) return console.log(err);
         console.log(db_results);
-        result = pug.renderFile('templates/allbooks.pug', {db_results});
+        //result = pug.renderFile('templates/allbooks.pug', {db_results});
+        toDisplay = []
+         for(let book of db_results){
+            let el = {
+               tytuł: book.title,
+               autor: book.author,
+               przeczytana: book.done
+            }
+            toDisplay.push(el)
+         }
+         result = pug.renderFile('templates/allbooks.pug', {toDisplay});
         res.status(200).send(result);
      })
   } else {
@@ -149,6 +173,7 @@ app.get('/getmystats', function(req, res) {
  
 app.post('/login', function(req,res) {
     console.log(req.body);
+    console.log(req.session)
     if (!req.body.login || !req.body.pass) {
       res.status(401).send("nie udało się zalogować - sprawdź poprawność danych i upewnij się że nie pominąłeś żadnego pola");
     } else{ 
@@ -169,6 +194,7 @@ app.post('/login', function(req,res) {
                if(req.body.pass === db_results.pass){
                   session.sessionType = 'online'
                   session.userId = db_results._id;
+                  console.log(session)
                   res.status(200).send("Wszystko działa jak trzeba, zalogowałeś się na swoje konto i połączyłeś z bazą!");
                }else{
                   session.userId = '';

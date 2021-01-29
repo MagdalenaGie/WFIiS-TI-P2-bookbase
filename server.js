@@ -14,6 +14,7 @@ var mongobase;
 const port = 3123;
 
 const app = express();
+app.set('trustproxy', true)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
